@@ -40,41 +40,20 @@
             <h2 class="section-title">Sinwoo's Portfolio</h2>
             <p class="section-desc"> My Job's history Instroduction </p>
             
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-card">
-                    <div class="card-image" style="background-color: #FFD166;">
-                        <!-- Image Placeholder: images/portfolio1.jpg -->
-                        <span>💻</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>KLayout Automation</h3>
-                        <p>Semiconductor layout design automation script using Python/Ruby.</p>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="portfolio-card">
-                    <div class="card-image" style="background-color: #06D6A0;">
-                        <!-- Image Placeholder: images/portfolio2.jpg -->
-                        <span>🔧</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Project Title 2</h3>
-                        <p>Another cool project description goes here.</p>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="portfolio-card">
-                    <div class="card-image" style="background-color: #118AB2;">
-                        <!-- Image Placeholder: images/portfolio3.jpg -->
-                        <span>🚀</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Project Title 3</h3>
-                        <p>Something awesome you built.</p>
-                    </div>
-                </div>
+        <div id="portfolio-container" class="portfolio-grid">
+            <!-- Portfolio items will be injected by script.js -->
+        </div>
+
+        <!-- Portfolio Detail View (Hidden by default) -->
+        <div id="portfolio-detail-view" class="portfolio-detail-view" style="display: none;">
+            <div class="viewer-header">
+                <button id="portfolio-back-btn" class="btn-back">← 목록으로</button>
+                <h2 id="portfolio-detail-title"></h2>
             </div>
+            <div id="portfolio-detail-content" class="portfolio-detail-content">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
         </div>
     </section>
 
