@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리의 여행 이야기 | Portfolio & Family</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Fredoka (Headings) & Gaegu (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo" id="logo-btn">Sung-Ah's Family</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#gallery">Family</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>설렘이 가득한<br>우리의 모든 이야기</h1>
+            <p>SungAh 가족의 추억을 담은 즐거운 공간입니다</p>
+            <a href="#gallery" class="btn-main">추억 보기 📸</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Sinwoo's Portfolio</h2>
+            <p class="section-desc"> My Job's history Instroduction </p>
+            
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-card">
+                    <div class="card-image" style="background-color: #FFD166;">
+                        <!-- Image Placeholder: images/portfolio1.jpg -->
+                        <span>💻</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>KLayout Automation</h3>
+                        <p>Semiconductor layout design automation script using Python/Ruby.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-card">
+                    <div class="card-image" style="background-color: #06D6A0;">
+                        <!-- Image Placeholder: images/portfolio2.jpg -->
+                        <span>🔧</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Project Title 2</h3>
+                        <p>Another cool project description goes here.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="portfolio-card">
+                    <div class="card-image" style="background-color: #118AB2;">
+                        <!-- Image Placeholder: images/portfolio3.jpg -->
+                        <span>🚀</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Project Title 3</h3>
+                        <p>Something awesome you built.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Gallery Section -->
+    <section id="gallery" class="section-padding bg-beige">
+        <div class="container">
+            <h2 class="section-title">Family Memories</h2>
+            <p class="section-desc">함께한 소중한 시간들과 여행의 순간들</p>
+            
+            <div id="albums-container" class="albums-grid">
+                <!-- Albums will be injected by script.js -->
+            </div>
+
+            <!-- Album Detail View (Hidden by default) -->
+            <div id="album-viewer" class="album-viewer" style="display: none;">
+                <div class="viewer-header">
+                    <button id="back-btn" class="btn-back">← 앨범 목록으로</button>
+                    <h2 id="viewer-title"></h2>
+                </div>
+                <div id="photos-container" class="photos-grid">
+                    <!-- Photos will be injected by script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">About Me</h2>
+                <p>안녕하세요! 반도체 설계 엔지니어이자 은경이 남편,성아 아빠입니다.</p>
+                <p>일을 통해 새로운 기술을 배우는 것도 즐겁지만, 가족과 함께하는 여행과 추억이 제 삶의 가장 큰 원동력입니다.</p>
+                <p>이 사이트는 제가 작업한 포트폴리오와 가족의 소중한 순간들을 기록하기 위해 만들었습니다.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/profile.JPG" alt="Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Our Journey. All memories reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption-text"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
