@@ -35,8 +35,8 @@ const albums = [
 // Portfolio Data
 const portfolios = [
     {
-        title: 'KLayout Automation',
-        desc: 'Semiconductor layout design automation script using Python/Ruby.',
+        title: 'Standard Cell Development',
+        desc: 'Samsung Foundary 제품 탑제 Primitive cell 개발',
         icon: '💻',
         color: '#FFD166',
         content: `
@@ -52,8 +52,8 @@ const portfolios = [
         `
     },
     {
-        title: 'Project Title 2',
-        desc: 'Another cool project description goes here.',
+        title: 'Standard Cell Physical Design Automation',
+        desc: 'Standard cell 개발 표준화 및 자동화 솔루션 구축',
         icon: '🔧',
         color: '#06D6A0',
         content: `
@@ -67,8 +67,8 @@ const portfolios = [
         `
     },
     {
-        title: 'Project Title 3',
-        desc: 'Something awesome you built.',
+        title: 'Standard Cell Physical QA Solutions',
+        desc: 'Standard cell Quality Assurance 솔루션 개발',
         icon: '🚀',
         color: '#118AB2',
         content: `
