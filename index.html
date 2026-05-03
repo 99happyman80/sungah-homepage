@@ -12,6 +12,20 @@
 </head>
 <body>
 
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-box">
+            <h2>🔒 Sung-Ah's Family</h2>
+            <p>가족과 추억을 공유하는 공간입니다.<br>접속을 위해 비밀번호를 입력해주세요.</p>
+            <input type="password" id="password-input" placeholder="Password" class="login-input">
+            <button id="login-btn" class="login-btn">입장하기</button>
+            <p id="error-msg" class="error-msg">비밀번호가 틀렸습니다.</p>
+        </div>
+    </div>
+
+    <!-- Main Site Content (Hidden by default) -->
+    <div id="site-content" style="display: none;">
+
     <!-- Navigation -->
     <header id="header">
         <nav class="navbar">
@@ -123,6 +137,7 @@
     <footer>
         <p>&copy; 2026 Our Journey. All memories reserved.</p>
     </footer>
+    </div> <!-- End of site-content -->
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">

@@ -321,7 +321,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderBooks();
 
-    // 5. Lightbox Logic
+    // 6. Login Logic
+    const loginOverlay = document.getElementById('login-overlay');
+    const passwordInput = document.getElementById('password-input');
+    const loginBtn = document.getElementById('login-btn');
+    const errorMsg = document.getElementById('error-msg');
+    const siteContent = document.getElementById('site-content');
+    const CORRECT_PASSWORD = 'lovefamily'; // 비밀번호
+
+    function checkPassword() {
+        if (passwordInput.value === CORRECT_PASSWORD) {
+            loginOverlay.style.opacity = '0';
+            setTimeout(() => {
+                loginOverlay.style.display = 'none';
+                siteContent.style.display = 'block';
+            }, 500);
+        } else {
+            errorMsg.style.display = 'block';
+            passwordInput.value = '';
+            passwordInput.focus();
+        }
+    }
+
+    if(loginBtn) loginBtn.addEventListener('click', checkPassword);
+    if(passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+        passwordInput.focus();
+    }
+
+    // 7. Lightbox Logic
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const captionText = document.getElementById('caption-text');
@@ -338,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) lightbox.style.display = 'none';
     });
 
-    // 6. Header Scroll Effect
+    // 8. Header Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
