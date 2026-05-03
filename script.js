@@ -79,6 +79,63 @@ const portfolios = [
     }
 ];
 
+// Books Data
+const books = [
+    {
+        title: '클린 코드',
+        author: '로버트 C. 마틴',
+        cover: 'https://placehold.co/250x350/118AB2/ffffff?text=Clean+Code',
+        rating: 5,
+        summary: '좋은 코드를 작성하기 위한 원칙과 실천 방법',
+        content: `
+            <div class="book-detail-cover">
+                <img src="https://placehold.co/250x350/118AB2/ffffff?text=Clean+Code" alt="클린 코드">
+            </div>
+            <div class="book-detail-text">
+                <h3>📖 책 소개</h3>
+                <p>좋은 코드를 작성하기 위한 원칙과 실천 방법을 다룹니다.</p>
+                <h3>💡 핵심 깨달음</h3>
+                <ul>
+                    <li>의도가 드러나는 코드를 작성하라</li>
+                    <li>함수는 작게, 더 작게</li>
+                    <li>주석은 나쁜 코드를 보완하지 못한다</li>
+                </ul>
+                <div class="highlight-quote">
+                    "뒤엉킨 코드는 기능을 추가하거나 변경하기 어렵게 만든다."
+                </div>
+                <h3>📝 나의 생각</h3>
+                <p>실무에서 바로 적용할 수 있는 내용들이 많아서 좋았습니다. 특히 네이밍 규칙과 함수 분할 원칙은 매일 참고하고 있습니다.</p>
+            </div>
+        `
+    },
+    {
+        title: '도서 제목 2',
+        author: '저자 이름',
+        cover: 'https://placehold.co/250x350/06D6A0/ffffff?text=Book+2',
+        rating: 4,
+        summary: '두 번째 책에 대한 짧은 소개',
+        content: `
+            <div class="book-detail-cover">
+                <img src="https://placehold.co/250x350/06D6A0/ffffff?text=Book+2" alt="도서 2">
+            </div>
+            <div class="book-detail-text">
+                <h3>📖 책 소개</h3>
+                <p>책에 대한 간략한 소개를 적습니다.</p>
+                <h3>💡 핵심 깨달음</h3>
+                <ul>
+                    <li>첫 번째 깨달음</li>
+                    <li>두 번째 깨달음</li>
+                </ul>
+                <div class="highlight-quote">
+                    "인용구를 여기에 적어보세요."
+                </div>
+                <h3>📝 나의 생각</h3>
+                <p>이 책에 대한 개인적인 리뷰를 적습니다.</p>
+            </div>
+        `
+    }
+];
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -98,6 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const portfolioContainer = document.getElementById('portfolio-container');
         if(portfolioDetailView) portfolioDetailView.style.display = 'none';
         if(portfolioContainer) portfolioContainer.style.display = 'grid';
+
+        // Book detail reset
+        const bookDetailView = document.getElementById('book-detail-view');
+        const booksContainer = document.getElementById('books-container');
+        if(bookDetailView) bookDetailView.style.display = 'none';
+        if(booksContainer) booksContainer.style.display = 'grid';
     };
 
     const handleHomeClick = (e) => {
@@ -213,7 +276,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderPortfolios();
 
-    // 4. Lightbox Logic
+    // 4. Books Rendering
+    const booksContainer = document.getElementById('books-container');
+    const bookDetailView = document.getElementById('book-detail-view');
+    const bookDetailTitle = document.getElementById('book-detail-title');
+    const bookDetailContent = document.getElementById('book-detail-content');
+    const bookBackBtn = document.getElementById('book-back-btn');
+
+    function renderBooks() {
+        if(!booksContainer) return;
+        booksContainer.innerHTML = '';
+        books.forEach(book => {
+            const card = document.createElement('div');
+            card.className = 'book-card';
+            card.onclick = () => openBook(book);
+            const stars = '⭐'.repeat(book.rating);
+            card.innerHTML = `
+                <div class="book-cover">
+                    <img src="${book.cover}" alt="${book.title}" onerror="this.src='https://placehold.co/250x350/FFD166/ffffff?text=${book.title}'">
+                </div>
+                <div class="book-info">
+                    <h3>${book.title}</h3>
+                    <p class="book-author">${book.author}</p>
+                    <p class="book-summary">${book.summary}</p>
+                    <p class="book-rating">${stars}</p>
+                </div>
+            `;
+            booksContainer.appendChild(card);
+        });
+    }
+
+    function openBook(book) {
+        if(!bookDetailView) return;
+        booksContainer.style.display = 'none';
+        bookDetailView.style.display = 'block';
+        bookDetailTitle.textContent = book.title;
+        bookDetailContent.innerHTML = book.content;
+    }
+
+    if(bookBackBtn) bookBackBtn.addEventListener('click', () => {
+        bookDetailView.style.display = 'none';
+        booksContainer.style.display = 'grid';
+    });
+
+    renderBooks();
+
+    // 5. Lightbox Logic
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const captionText = document.getElementById('caption-text');
@@ -230,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) lightbox.style.display = 'none';
     });
 
-    // 5. Header Scroll Effect
+    // 6. Header Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

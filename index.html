@@ -19,6 +19,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#books">Books</a></li>
                 <li><a href="#gallery">Family</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
@@ -54,6 +55,29 @@
                 <!-- Content injected by JS -->
             </div>
         </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="books" class="section-padding bg-beige">
+        <div class="container">
+            <h2 class="section-title">Book Stories</h2>
+            <p class="section-desc">읽은 책들, 나의 생각과 느낌</p>
+            
+            <div id="books-container" class="books-grid">
+                <!-- Books will be injected by script.js -->
+            </div>
+
+            <!-- Book Detail View (Hidden by default) -->
+            <div id="book-detail-view" class="book-detail-view" style="display: none;">
+                <div class="viewer-header">
+                    <button id="book-back-btn" class="btn-back">← 목록으로</button>
+                    <h2 id="book-detail-title"></h2>
+                </div>
+                <div id="book-detail-content" class="book-detail-content">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
         </div>
     </section>
 
